@@ -51,11 +51,12 @@ body {
     align-items: center;
 }
 
-.mylearning{
+.mylearning {
     position: relative;
     cursor: pointer;
 }
-.mylearning__popup{
+
+.mylearning__popup {
     position: absolute;
     background-color: white;
     border: solid black 1px;
@@ -65,9 +66,11 @@ body {
     padding: 20px;
     display: none;
 }
-.mylearning:hover .mylearning__popup{
- display: block;
+
+.mylearning:hover .mylearning__popup {
+    display: block;
 }
+
 .categories {
     display: flex;
     padding: 10px;
@@ -76,10 +79,20 @@ body {
 }
 
 .categories p {
-    background-color: #892DE1;
+    background-color: #892de1;
     padding: 10px;
     color: white;
     border-radius: 30px;
+    cursor: pointer;
+    border: solid  #892de1 1px;
+}
+
+
+.categories p:hover{
+    transition: 1s;
+    background-color: transparent;
+    color:black;
+    border: solid  #892de1 1px;
 }
 
 .sale-image {
@@ -91,16 +104,31 @@ body {
 }
 
 .sale-image__offer {
-    width: 35%;
-    border: solid black 1px;
-    background-color:silver;
-    color: black;
-    padding: 3%;
+    width:35%;
+   
+    border: solid black 2px;
+    background-color: silver;
+    padding: 2%;
     position: absolute;
     top: 10%;
-    left: 10%;
+    left: 12%;
+    animation-name: zoom;
+    animation-duration: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
 
+}
 
+@keyframes zoom {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 .course-card img {
